@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const AddLinkSchema = new Schema({
+const AddTaskSchema = new Schema({
     Title: {
         type: String,
         required: 'Title'
@@ -25,4 +25,4 @@ const AddLinkSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('AddLinks', AddLinkSchema);
+module.exports = mongoose.model('AddTasks', AddTaskSchema);

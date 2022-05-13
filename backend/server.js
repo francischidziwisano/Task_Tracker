@@ -4,8 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nametestRoutes = require('./api/routes/nametestRoutes');
-const nametestModels = require('./api/models/nametestModels');
-const addlinkModels = require('./api/models/addlinkModels');
+const addtaskModels = require('./api/models/addtaskModels');
 const newuserModels = require('./api/models/newuserModels');
 const bodyParser = require('body-parser');
 
@@ -16,7 +15,7 @@ app.use(cors())
 const port = process.env.PORT || 3000;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/SCS');
+mongoose.connect('mongodb://localhost/Task_Tracker');
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());

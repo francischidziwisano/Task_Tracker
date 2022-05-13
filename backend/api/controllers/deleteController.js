@@ -2,12 +2,12 @@
 
 const { application } = require('express');
 const mongoose = require('mongoose');
-const AddUser = mongoose.model('AddLinks');
+const DeleteTask = mongoose.model('AddTasks');
 
 exports.delete_user = async (req, res) => {
             const _id = req.body._id;
 
-            const usera = await AddUser.deleteOne({ _id })
+            const usera = await DeleteTask.deleteOne({ _id })
             
             if (usera){
                 console.log('Task Deleted')

@@ -2,7 +2,7 @@
 
 const { application } = require('express');
 const mongoose = require('mongoose');
-const AddUser = mongoose.model('AddLinks');
+const AddTask = mongoose.model('AddTasks');
 
 exports.update_task = async (req, res) => {
             const _id = req.params.id;
@@ -10,7 +10,7 @@ exports.update_task = async (req, res) => {
 
            console.log(status)
 
-            const usera = await AddUser.updateOne({ _id }, { $set : { Status: status} })
+            const usera = await AddTask.updateOne({ _id }, { $set : { Status: status} })
             
             if (usera){
                 console.log('Task Updated' + _id)
