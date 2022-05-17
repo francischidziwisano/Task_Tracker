@@ -7,12 +7,13 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 exports.login_user = async (req, res) => {
-            const username = req.body.username;
+            const email = req.body.email;
             const pass = req.body.userpassword
 
-            const usera = await AddUser.findOne({ username }).lean()
+            const usera = await AddUser.findOne({ email }).lean()
             
             console.log(await usera);
+            console.log(email)
             
             if ( await bcrypt.compare(pass, usera.userpassword)){
                let token = jwt.sign({userId: usera._id}, 'secretkey');

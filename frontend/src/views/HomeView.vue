@@ -11,8 +11,8 @@
           <input
             type="name"
             class="form-control"
-            placeholder="Username"
-            v-model="NewUser.username"
+            placeholder="Email Address"
+            v-model="NewUser.email"
             required
           />
         </div>
@@ -45,7 +45,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      NewUser: {username: '', userpassword: ''}
+      NewUser: {email: '', userpassword: ''}
     }
   }, 
   components: {
@@ -55,7 +55,7 @@ export default {
   methods: {
     addToAPI () {
       let newUser = {
-        username: this.NewUser.username,
+        username: this.NewUser.email,
         userpassword: this.NewUser.userpassword
       }
       console.log(this.NewUser)
